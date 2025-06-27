@@ -166,7 +166,8 @@ export default function Portfolio() {
               </div>
 
               <div className="flex gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 font-bold px-8">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 font-bold px-8"
+                 onClick={() => window.open("https://linkedin.com/in/gustavo-sandoval/", "_blank")}>
                   CONTACTAR
                 </Button>
                 <Button
