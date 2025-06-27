@@ -189,6 +189,7 @@ export default function Portfolio() {
                     width={300}
                     height={400}
                     className="w-full h-full object-cover"
+                    priority 
                   />
                 </div>
                 <div className="absolute -top-6 -right-6 w-12 h-12 bg-accent"></div>
