@@ -71,7 +71,7 @@ export default function Portfolio() {
       image: "/porfolioweb.png?height=200&width=300",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com",
-      demo: "https://demo.com",
+      demo: "",
       featured: false,
       accent: "primary",
     },
