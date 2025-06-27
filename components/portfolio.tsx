@@ -110,9 +110,21 @@ export default function Portfolio() {
             </div>
             <div className="flex items-center gap-2">
               <ThemeToggle />
-              <Button variant="outline" size="sm" className="border-2 border-primary font-bold bg-transparent">
-                <Download className="w-4 h-4 mr-2" />
-                CV
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-2 border-primary font-bold bg-transparent"
+                asChild
+              >
+                <a
+                  href="/cv-gustavo-sandoval.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  CV
+                </a>
               </Button>
             </div>
           </div>
