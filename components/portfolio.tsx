@@ -152,7 +152,7 @@ export default function Portfolio() {
                Fullstack Developer, actualmente como freelance.
                <br />
                   Estuve en <a href="https://isurgob.com/" className="text-primary">IsurGob </a> y colaboré con la empresa
-                <a href="https://materiasistemas.com.ar/" className="text-primary"> Materia.</a>
+                <a href="https://materiasistemas.com.ar/" className="text-primary"> Materia </a> en el desarrollo de sistemas para distintas necesidades.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start">
                 <div className="flex items-center gap-2 text-muted-foreground font-medium">
@@ -219,17 +219,13 @@ export default function Portfolio() {
                 <p className="text-muted-foreground leading-relaxed">
                   ¡Hola, soy Gustavo! Soy un Técnico desarrollador de software.
 
-                  Bienvenido a mi lugar en la web para proyectos que he creado, artículos relacionados al desarrollo, reflexiones y cualquier otra cosa que quiera mostrarle al mundo.
-
-                  Soy entusiasta a la hora de resolver problemas y busco siempre ser de ayuda para todo aquel que me necesita. Mi camino en el desarrollo de sistemas comenzó en el 2019 pero mi vida siempre estuvo ligada a la tecnología, desde la reparación de hardware hasta el diseño gráfico.
+                  Bienvenido a mi lugar en la web para mostrar proyectos que he creado, artículos relacionados al desarrollo, reflexiones y cualquier otra cosa que quiera mostrarle al mundo.
 
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                  Soy entusiasta a la hora de resolver problemas y busco siempre ser de ayuda para todo aquel que me necesita. Mi camino en el desarrollo de sistemas comenzó en el 2019 pero mi vida siempre estuvo ligada a la tecnología, desde la reparación de hardware hasta el diseño gráfico.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Mi sitio no tiene anuncios, ni enlaces de afiliados, ni seguimiento, ni análisis, ni publicaciones patrocinadas.
-                </p>
+          
               </div>
 
               <div className="flex gap-4">
