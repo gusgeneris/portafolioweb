@@ -57,7 +57,7 @@ export default function Portfolio() {
    {
       title: "Sistema Educativo",
       description: "App web para la gestión integral de instituciones educativas: carreras, cátedras, docentes, alumnos, horarios y asistencia. Incluye login con perfiles y dashboard con estadísticas.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/proyectogestion.png?height=200&width=300",
       technologies: ["PHP", "MySQL", "jQuery", "CSS", "PDF Export", "Charts"],
       github: "https://github.com/gusgeneris/proyecto-sistema-educativo", 
       demo: "",   
