@@ -15,8 +15,13 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Gustavo Desarrollador - Portfolio",
+  title: "Gustavo Desarrollador",
   description: "Portfolio personal de desarrollador Full Stack.",
+    icons: {
+    icon: "/icon.png",            // Navegadores de escritorio
+    shortcut: "/icon.png",  // Navegadores modernos / pinned tabs
+    apple: "/icon.png",  // iOS / iPadOS
+  },
 }
 
 export default function RootLayout({
@@ -27,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
           {children}
         </ThemeProvider>
       </body>
