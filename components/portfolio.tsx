@@ -261,14 +261,14 @@ export default function Portfolio() {
                   <div className="space-y-6">
                     <div className="relative pl-6">
                       <div className="absolute left-0 top-1 w-3 h-3 bg-primary rounded-full"></div>
-                      <h4 className="font-bold text-lg">Front/Backend Developer</h4>
-                      <p className="text-muted-foreground font-medium">Freelancer • 2025 - Presente</p>
+                      <h4 className="font-bold text-lg">Freelancer</h4>
+                      <p className="text-muted-foreground font-medium"> • 2025 - Presente</p>
                     </div>
 
                     <div className="relative pl-6">
                       <div className="absolute left-0 top-1 w-3 h-3 bg-accent rounded-full"></div>
-                      <h4 className="font-bold text-lg">Front/Backend Developer</h4>
-                      <p className="text-muted-foreground font-medium">Material • 2023 - 2024</p>
+                      <h4 className="font-bold text-lg">Material</h4>
+                      <p className="text-muted-foreground font-medium"> • 2023 - 2024</p>
                       <p className="text-sm text-muted-foreground mt-1">
                         Desarrollo de sistemas a medida para diversos sectores. Trabajé con tecnologías como <strong>Yii</strong>, <strong>PHP</strong>, <strong>React</strong>, <strong>Three.js</strong> y <strong>Material UI</strong>. Integración de <strong>APIs de Google</strong> (como Pipeline) y despliegue en <strong>AWS</strong>. Uso de <strong>Git</strong> y <strong>Jira</strong> para control de versiones y gestión de tareas.
                       </p>
@@ -276,8 +276,8 @@ export default function Portfolio() {
 
                     <div className="relative pl-6">
                       <div className="absolute left-0 top-1 w-3 h-3 bg-secondary rounded-full"></div>
-                      <h4 className="font-bold text-lg">Front/Backend Developer</h4>
-                      <p className="text-muted-foreground font-medium">Isur • 2022 - 2024</p>
+                      <h4 className="font-bold text-lg">Isur empresa consultora</h4>
+                      <p className="text-muted-foreground font-medium"> • 2022 - 2024</p>
                       <p className="text-sm text-muted-foreground mt-1">
                         Empresa enfocada en el desarrollo y mantenimiento de sistemas de administración municipal en Argentina (El Bolsón, Rawson, El Hoyo, entre otros). Participé en proyectos con tecnologías como <strong>Yii</strong>, <strong>PHP</strong>, <strong>JavaScript</strong>, <strong>jQuery</strong> y <strong>APIs de integración bancaria</strong>.
                       </p>
