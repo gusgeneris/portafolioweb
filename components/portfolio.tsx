@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import Image from "next/image"
 import Link from "next/link"
+import ChatWidget from "@/components/chatWidget"; 
 
 export default function Portfolio() {
   const skills = [
@@ -78,6 +79,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
+       <ChatWidget />
       {/* Bauhaus geometric background elements */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-20 right-20 w-32 h-32 bg-primary/10 rotate-45"></div>
