@@ -161,10 +161,10 @@ export default function Portfolio() {
                   <div className="w-3 h-3 bg-primary"></div>
                   <span>Formosa, Argentina</span>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground font-medium">
+                {/* <div className="flex items-center gap-2 text-muted-foreground font-medium">
                   <div className="w-3 h-3 bg-accent"></div>
                   <span>Disponible para proyectos</span>
-                </div>
+                </div> */}
               </div>
 
               <div className="flex gap-4">

@@ -72,16 +72,26 @@
     --ring: 140 70% 45%;
   }
   
-  /* Transiciones suaves para elementos que usan colores secundarios y accent */
+  /* Transiciones suaves para elementos que usan colores del tema */
+  .dark [class*="bg-primary"],
   .dark [class*="bg-secondary"],
   .dark [class*="bg-accent"],
+  .dark [class*="border-primary"],
   .dark [class*="border-secondary"],
   .dark [class*="border-accent"],
+  .dark [class*="text-primary"],
   .dark [class*="text-secondary"],
   .dark [class*="text-accent"] {
     transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
                 color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Transiciones para elementos con opacidad */
+  .dark [class*="bg-primary/"],
+  .dark [class*="bg-secondary/"],
+  .dark [class*="bg-accent/"] {
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 

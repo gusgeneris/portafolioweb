@@ -31,6 +31,7 @@ export function useAnimatedColors() {
         cancelAnimationFrame(animationFrameRef.current)
       }
       const root = document.documentElement
+      root.style.setProperty("--primary", "190 32% 55%")
       root.style.setProperty("--secondary", "190 32% 35%")
       root.style.setProperty("--accent", "190 32% 75%")
       root.style.setProperty("--ring", "190 32% 45%")
@@ -59,11 +60,13 @@ export function useAnimatedColors() {
 
       // Actualizar variables CSS
       const root = document.documentElement
+      // Primary: más claro (45% lightness) para mantener contraste
+      root.style.setProperty("--primary", `${Math.round(hue)} ${Math.round(sat)}% 45%`)
+      // Secondary y Accent: más oscuros (20% lightness)
       root.style.setProperty("--secondary", `${Math.round(hue)} ${Math.round(sat)}% ${Math.round(light)}%`)
       root.style.setProperty("--accent", `${Math.round(hue)} ${Math.round(sat)}% ${Math.round(light)}%`)
-      
-      // También actualizar el ring para mantener consistencia
-      root.style.setProperty("--ring", `${Math.round(hue)} ${Math.round(sat)}% ${Math.round(light * 2.25)}%`)
+      // Ring: intermedio (45% lightness)
+      root.style.setProperty("--ring", `${Math.round(hue)} ${Math.round(sat)}% 45%`)
 
       if (isDarkRef.current) {
         animationFrameRef.current = requestAnimationFrame(animate)
