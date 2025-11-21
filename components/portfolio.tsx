@@ -42,6 +42,8 @@ export default function Portfolio() {
     { name: "n8n", icon: Workflow, color: "primary" },
     { name: "Yii2", icon: Code, color: "accent" },
     { name: "Wordpress", icon: Code, color: "accent" },
+    { name: "Retell", icon: Smartphone, color: "accent" },
+    { name: "Meta Graph API", icon: Globe, color: "secondary" },
   ];
 
   const projects = [
@@ -149,7 +151,7 @@ export default function Portfolio() {
               </div>
 
               <p className="text-xl md:text-2xl text-muted-foreground font-medium max-w-lg">
-               Fullstack Developer, actualmente como freelance.
+               Fullstack Developer, actualmente trabajando como Junior Engineer en <a href="https://raveintelligence.com/" className="text-primary">RaveIntelligence</a>.
                <br />
                   Estuve en <a href="https://isurgob.com/" className="text-primary">IsurGob </a> y colaboré con la empresa
                 <a href="https://materiasistemas.com.ar/" className="text-primary"> Materia </a> en el desarrollo de sistemas para distintas necesidades.
@@ -257,8 +259,11 @@ export default function Portfolio() {
                   <div className="space-y-6">
                     <div className="relative pl-6">
                       <div className="absolute left-0 top-1 w-3 h-3 bg-primary rounded-full"></div>
-                      <h4 className="font-bold text-lg">Freelancer</h4>
+                      <h4 className="font-bold text-lg">RaveIntelligence - Junior Engineer</h4>
                       <p className="text-muted-foreground font-medium"> • 2025 - Presente</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Desarrollo de soluciones de IA y automatización para empresas. Trabajo con tecnologías como <strong>Retell</strong> para agentes de voz con IA, integración de <strong>Meta Graph API</strong> para automatización de redes sociales, y desarrollo de sistemas de IA que optimizan procesos comerciales y de soporte.
+                      </p>
                     </div>
 
                     <div className="relative pl-6">
