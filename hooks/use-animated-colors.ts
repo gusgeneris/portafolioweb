@@ -5,13 +5,16 @@ import { useTheme } from "next-themes"
 
 // Paleta de colores para ciclar en modo oscuro
 // Cada color está en formato HSL: [hue, saturation, lightness]
+// Colores más masculinos: verdes, azules, naranjas y grises
 const colorPalette = [
-  { hue: 140, sat: 70, light: 20 }, // Verde (color original)
+  { hue: 140, sat: 70, light: 20 }, // Verde esmeralda (color original)
   { hue: 200, sat: 70, light: 20 }, // Azul
-  { hue: 280, sat: 70, light: 20 }, // Púrpura
-  { hue: 320, sat: 70, light: 20 }, // Rosa
-  { hue: 30, sat: 70, light: 20 },  // Naranja
-  { hue: 180, sat: 70, light: 20 }, // Cyan
+  { hue: 180, sat: 60, light: 20 }, // Teal/verde azulado (más masculino que cyan)
+  { hue: 210, sat: 40, light: 20 }, // Gris azulado/pizarra
+  { hue: 30, sat: 70, light: 20 },  // Naranja/ámbar
+  { hue: 150, sat: 65, light: 20 }, // Verde esmeralda oscuro
+  { hue: 195, sat: 55, light: 20 }, // Azul teal oscuro
+  { hue: 220, sat: 35, light: 20 }, // Gris azul acero
 ]
 
 export function useAnimatedColors() {
