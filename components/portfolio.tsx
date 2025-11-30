@@ -496,12 +496,9 @@ export default function Portfolio() {
       <section 
         id="about" 
         ref={aboutRef}
-        className={`py-12 sm:py-16 lg:py-20 px-4 bg-muted/30 relative overflow-hidden transition-all duration-1000 ${
+        className={`py-12 sm:py-16 lg:py-20 px-4 bg-muted/30 relative overflow-hidden transition-all duration-1000 z-0 ${
           aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
         }`}
-        style={{
-          transform: `translateY(${aboutVisible ? Math.max(0, (scrollY - 600) * 0.1) : 0}px)`,
-        }}
       >
         {/* Animated background elements */}
         <div className="absolute top-10 right-4 sm:right-10 w-4 h-4 sm:w-6 sm:h-6 bg-primary rounded-full animate-network-pulse shadow-lg shadow-primary/50">
@@ -605,12 +602,9 @@ export default function Portfolio() {
       <section 
         id="skills" 
         ref={skillsRef}
-        className={`py-12 sm:py-16 lg:py-20 px-4 relative overflow-hidden transition-all duration-1000 ${
+        className={`py-12 sm:py-16 lg:py-20 px-4 mb-8 sm:mb-0 relative overflow-hidden transition-all duration-1000 z-10 ${
           skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
         }`}
-        style={{
-          transform: `translateY(${skillsVisible ? Math.max(0, (scrollY - 1200) * 0.08) : 0}px)`,
-        }}
       >
         {/* Animated background elements */}
         <div className="absolute bottom-10 left-4 sm:left-10 w-3 h-3 sm:w-4 sm:h-4 bg-secondary rounded-full animate-network-pulse shadow-lg shadow-secondary/50">
@@ -652,7 +646,6 @@ export default function Portfolio() {
                   }`}
                   style={{
                     transitionDelay: `${index * 50}ms`,
-                    transform: `translateY(${skillsVisible ? Math.max(0, (scrollY - 1200 - index * 50) * 0.05) : 0}px)`,
                   }}
                 >
                   {/* Animated glow effect on hover */}
@@ -702,7 +695,7 @@ export default function Portfolio() {
       <section 
         id="projects" 
         ref={projectsRef}
-        className={`py-12 sm:py-16 lg:py-20 px-4 pb-24 sm:pb-32 md:pb-24 bg-muted/30 relative transition-all duration-1000 ${
+        className={`pt-16 sm:pt-12 lg:pt-16 pb-24 sm:pb-32 md:pb-24 px-4 bg-muted/30 relative transition-all duration-1000 z-20 ${
           projectsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
         }`}
       >
@@ -739,7 +732,6 @@ export default function Portfolio() {
                   }`}
                   style={{
                     transitionDelay: `${index * 100}ms`,
-                    transform: `translateY(${projectsVisible ? Math.max(0, (scrollY - 1800 - index * 100) * 0.04) : 0}px)`,
                   }}
                 >
                   <div className="relative overflow-hidden">
