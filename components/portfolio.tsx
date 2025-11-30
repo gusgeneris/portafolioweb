@@ -30,10 +30,12 @@ import {
   Sparkles,
   CircuitBoard,
   Layers,
+  Menu,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import ChatWidget from "@/components/chatWidget"; 
+import ChatWidget from "@/components/chatWidget"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet" 
 
 export default function Portfolio() {
   const [scrollY, setScrollY] = useState(0)
@@ -42,6 +44,7 @@ export default function Portfolio() {
   const [aboutVisible, setAboutVisible] = useState(false)
   const [skillsVisible, setSkillsVisible] = useState(false)
   const [projectsVisible, setProjectsVisible] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const heroRef = useRef<HTMLDivElement>(null)
   const aboutRef = useRef<HTMLDivElement>(null)
   const skillsRef = useRef<HTMLDivElement>(null)
@@ -158,20 +161,20 @@ export default function Portfolio() {
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Animated gradient orbs with parallax scroll */}
         <div 
-          className="absolute top-20 right-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow animate-float"
+          className="absolute top-20 right-4 sm:right-20 w-48 h-48 sm:w-96 sm:h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow animate-float"
           style={{
             transform: `translateY(${scrollY * 0.3}px)`,
           }}
         ></div>
         <div 
-          className="absolute bottom-40 left-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse-glow animate-float" 
+          className="absolute bottom-40 left-4 sm:left-10 w-40 h-40 sm:w-80 sm:h-80 bg-accent/20 rounded-full blur-3xl animate-pulse-glow animate-float" 
           style={{ 
             animationDelay: '1s',
             transform: `translateY(${scrollY * -0.2}px)`,
           }}
         ></div>
         <div 
-          className="absolute top-1/2 left-1/4 w-72 h-72 bg-secondary/15 rounded-full blur-3xl animate-pulse-glow animate-float" 
+          className="absolute top-1/2 left-1/4 w-36 h-36 sm:w-72 sm:h-72 bg-secondary/15 rounded-full blur-3xl animate-pulse-glow animate-float" 
           style={{ 
             animationDelay: '2s',
             transform: `translateY(${scrollY * 0.4}px)`,
@@ -201,17 +204,17 @@ export default function Portfolio() {
         }}></div>
         
         {/* Animated network nodes with connections */}
-        <div className="absolute top-32 right-32 w-3 h-3 bg-primary rounded-full animate-network-pulse shadow-lg shadow-primary/50">
+        <div className="absolute top-32 right-8 sm:right-32 w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full animate-network-pulse shadow-lg shadow-primary/50">
           <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75"></div>
         </div>
-        <div className="absolute bottom-52 left-20 w-3 h-3 bg-accent rounded-full animate-network-pulse shadow-lg shadow-accent/50" style={{ animationDelay: '0.5s' }}>
+        <div className="absolute bottom-52 left-4 sm:left-20 w-2 h-2 sm:w-3 sm:h-3 bg-accent rounded-full animate-network-pulse shadow-lg shadow-accent/50" style={{ animationDelay: '0.5s' }}>
           <div className="absolute inset-0 bg-accent rounded-full animate-ping opacity-75" style={{ animationDelay: '0.5s' }}></div>
         </div>
-        <div className="absolute top-1/2 left-1/3 w-3 h-3 bg-secondary rounded-full animate-network-pulse shadow-lg shadow-secondary/50" style={{ animationDelay: '1s' }}>
+        <div className="absolute top-1/2 left-1/3 w-2 h-2 sm:w-3 sm:h-3 bg-secondary rounded-full animate-network-pulse shadow-lg shadow-secondary/50" style={{ animationDelay: '1s' }}>
           <div className="absolute inset-0 bg-secondary rounded-full animate-ping opacity-75" style={{ animationDelay: '1s' }}></div>
         </div>
-        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-primary rounded-full animate-network-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-accent rounded-full animate-network-pulse" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-1/4 right-1/4 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-network-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent rounded-full animate-network-pulse" style={{ animationDelay: '1.5s' }}></div>
 
         {/* Floating particles */}
         {[...Array(15)].map((_, i) => (
@@ -231,10 +234,10 @@ export default function Portfolio() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/90 backdrop-blur-md border-b-2 border-primary/50 shadow-lg shadow-primary/10 z-50">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-        <div className="container mx-auto px-4 py-4 relative z-10">
+        <div className="container mx-auto px-4 py-3 sm:py-4 relative z-10">
           <div className="flex justify-between items-center">
-            <Link href="#" className="text-2xl font-black tracking-tight group relative">
-              <span className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-3 py-1 shadow-lg shadow-primary/30 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all relative overflow-hidden">
+            <Link href="#" className="text-xl sm:text-2xl font-black tracking-tight group relative">
+              <span className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-2 sm:px-3 py-1 shadow-lg shadow-primary/30 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all relative overflow-hidden">
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
                 <span className="relative z-10">GUSS</span>
               </span>
@@ -242,7 +245,7 @@ export default function Portfolio() {
                 DEV
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </span>
-              <span className="ml-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity group-hover:rotate-12 transition-transform duration-300 inline-block">
+              <span className="hidden sm:inline-block ml-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity group-hover:rotate-12 transition-transform duration-300">
                 <Brain className="w-5 h-5 inline animate-pulse" />
               </span>
             </Link>
@@ -260,12 +263,12 @@ export default function Portfolio() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
               </Link>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 sm:gap-2">
               <ThemeToggle />
               <Button
                 variant="outline"
                 size="sm"
-                className="border-2 border-primary font-bold bg-transparent"
+                className="border-2 border-primary font-bold bg-transparent hidden sm:flex"
                 asChild
               >
                 <a
@@ -278,6 +281,59 @@ export default function Portfolio() {
                   CV
                 </a>
               </Button>
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="md:hidden"
+                  >
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Toggle menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <nav className="flex flex-col gap-6 mt-8">
+                    <Link
+                      href="#about"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-lg font-medium hover:text-primary transition-colors uppercase tracking-wide"
+                    >
+                      Sobre mí
+                    </Link>
+                    <Link
+                      href="#skills"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-lg font-medium hover:text-accent transition-colors uppercase tracking-wide"
+                    >
+                      Habilidades
+                    </Link>
+                    <Link
+                      href="#projects"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-lg font-medium hover:text-secondary transition-colors uppercase tracking-wide"
+                    >
+                      Proyectos
+                    </Link>
+                    <Button
+                      variant="outline"
+                      className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold bg-transparent mt-4"
+                      asChild
+                    >
+                      <a
+                        href="/cv-gustavo-sandoval.pdf"
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <Download className="w-4 h-4 mr-2" />
+                        Descargar CV
+                      </a>
+                    </Button>
+                  </nav>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>
@@ -286,40 +342,32 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="pt-32 pb-20 px-4 relative"
-        style={{
-          transform: `translateY(${scrollY * 0.1}px)`,
-          transition: 'transform 0.1s ease-out',
-        }}
+        className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 relative"
       >
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div 
-              className="space-y-8"
-              style={{
-                transform: `translateY(${scrollY * -0.15}px)`,
-                transition: 'transform 0.1s ease-out',
-              }}
+              className="space-y-6 sm:space-y-8"
             >
               <div className="relative">
-                <div className="absolute -top-5 -left-4 w-8 h-8 bg-accent animate-pulse shadow-lg shadow-accent/50"></div>
-                <h1 className={`text-5xl md:text-7xl font-black leading-tight transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <div className="absolute -top-5 -left-4 w-6 h-6 sm:w-8 sm:h-8 bg-accent animate-pulse shadow-lg shadow-accent/50"></div>
+                <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                   <span className="inline-block hover:scale-105 transition-transform duration-300">GUSTAVO</span>
                   <br />
                   <span className="text-primary bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x hover:scale-105 transition-transform duration-300 inline-block">
                     SANDOVAL
                   </span>
                 </h1>
-                <div className="absolute -bottom-2 right-0 w-12 h-2 bg-gradient-to-r from-primary via-accent to-secondary animate-pulse"></div>
-                <div className={`flex items-center gap-2 mt-4 text-sm text-muted-foreground font-mono transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                  <Zap className="w-4 h-4 text-primary animate-pulse drop-shadow-lg" />
+                <div className="absolute -bottom-2 right-0 w-8 sm:w-12 h-2 bg-gradient-to-r from-primary via-accent to-secondary animate-pulse"></div>
+                <div className={`flex flex-wrap items-center gap-1 sm:gap-2 mt-3 sm:mt-4 text-xs sm:text-sm text-muted-foreground font-mono transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-primary animate-pulse drop-shadow-lg" />
                   <span className="hover:text-primary transition-colors">Automatización & IA</span>
-                  <Network className="w-4 h-4 text-accent ml-2 animate-pulse drop-shadow-lg" />
+                  <Network className="w-3 h-3 sm:w-4 sm:h-4 text-accent ml-1 sm:ml-2 animate-pulse drop-shadow-lg" />
                   <span className="hover:text-accent transition-colors">Procesos Inteligentes</span>
                 </div>
               </div>
 
-              <p className={`text-xl md:text-2xl text-muted-foreground font-medium max-w-lg transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium max-w-lg transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                Especialista en <span className="text-primary font-bold relative group cursor-pointer">
                  <span className="relative z-10">Automatización e IA</span>
                  <span className="absolute inset-0 bg-primary/20 blur-lg group-hover:bg-primary/30 transition-all"></span>
@@ -331,8 +379,8 @@ export default function Portfolio() {
                <br />
                Desarrollo soluciones inteligentes que automatizan procesos empresariales, integro agentes de IA conversacionales y creo workflows que optimizan operaciones comerciales.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-start">
-                <div className="flex items-center gap-2 text-muted-foreground font-medium">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
+                <div className="flex items-center gap-2 text-sm sm:text-base text-muted-foreground font-medium">
                   <div className="w-3 h-3 bg-primary"></div>
                   <span>Formosa, Argentina</span>
                 </div>
@@ -342,8 +390,8 @@ export default function Portfolio() {
                 </div> */}
               </div>
 
-              <div className={`flex gap-4 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 font-bold px-8 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60 transition-all relative overflow-hidden group"
+              <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 font-bold px-6 sm:px-8 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60 transition-all relative overflow-hidden group w-full sm:w-auto"
                  onClick={() => window.open("https://linkedin.com/in/gustavo-sandoval/", "_blank")}>
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
                   <Network className="w-4 h-4 mr-2 relative z-10 group-hover:rotate-12 transition-transform" />
@@ -352,7 +400,7 @@ export default function Portfolio() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-8 bg-transparent hover:shadow-lg hover:shadow-accent/30 transition-all relative overflow-hidden group"
+                  className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold px-6 sm:px-8 bg-transparent hover:shadow-lg hover:shadow-accent/30 transition-all relative overflow-hidden group w-full sm:w-auto"
                   onClick={() => window.open("https://github.com/gusgeneris", "_blank")}>
                   <span className="absolute inset-0 bg-accent/10 scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></span>
                   <Github className="w-4 h-4 mr-2 relative z-10 group-hover:scale-110 transition-transform" />
@@ -363,42 +411,26 @@ export default function Portfolio() {
 
             <div 
               ref={heroRef}
-              className={`relative transition-all duration-1000 delay-300 ${heroVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-              style={{
-                transform: `translateY(${scrollY * 0.2}px)`,
-                transition: 'opacity 1s ease-out, transform 0.1s ease-out',
-              }}
+              className={`relative transition-all duration-1000 delay-300 mt-8 lg:mt-0 ${heroVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
             >
               <div 
                 ref={imageRef}
-                className="relative w-80 h-80 mx-auto group"
-                style={{
-                  transform: `translateY(${scrollY * -0.3}px) rotateY(${Math.sin(scrollY * 0.01) * 5}deg)`,
-                  transition: 'transform 0.1s ease-out',
-                }}
+                className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto group"
               >
-                {/* Glowing background effect with parallax scroll */}
+                {/* Glowing background effect */}
                 <div 
                   className="absolute inset-0 bg-gradient-to-br from-primary/30 via-accent/20 to-secondary/30 rounded-lg blur-2xl animate-pulse-glow group-hover:scale-110 transition-transform duration-500"
-                  style={{
-                    transform: `translateY(${scrollY * 0.1}px)`,
-                  }}
                 ></div>
                 <div 
                   className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 rounded-lg blur-xl animate-pulse"
                   style={{ 
                     animationDelay: '1s',
-                    transform: `translateY(${scrollY * -0.15}px)`,
                   }}
                 ></div>
                 
-                {/* Main image container with scroll parallax */}
+                {/* Main image container */}
                 <div 
                   className="absolute top-4 left-4 right-4 bottom-4 bg-background border-4 border-primary/50 shadow-2xl shadow-primary/20 group-hover:border-primary/80 transition-all duration-300 relative overflow-hidden"
-                  style={{
-                    transform: `translateY(${scrollY * -0.4}px) scale(${1 + Math.sin(scrollY * 0.005) * 0.05})`,
-                    transition: 'transform 0.1s ease-out, border-color 0.3s ease',
-                  }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-accent/0 group-hover:from-primary/10 group-hover:via-accent/5 group-hover:to-secondary/10 transition-all duration-500 z-10"></div>
                   <Image
@@ -418,56 +450,40 @@ export default function Portfolio() {
                   ></div>
                 </div>
                 
-                {/* AI/Network decorative elements with scroll parallax */}
+                {/* AI/Network decorative elements */}
                 <div 
-                  className="absolute -top-6 -right-6 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/50 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 animate-float"
-                  style={{
-                    transform: `translateY(${scrollY * -0.25}px) rotate(${scrollY * 0.1}deg)`,
-                    transition: 'transform 0.1s ease-out',
-                  }}
+                  className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-8 h-8 sm:w-12 sm:h-12 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/50 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 animate-float"
                 >
-                  <Brain className="w-6 h-6 text-accent-foreground group-hover:scale-110 transition-transform" />
+                  <Brain className="w-4 h-4 sm:w-6 sm:h-6 text-accent-foreground group-hover:scale-110 transition-transform" />
                   <div className="absolute inset-0 bg-accent rounded-full animate-ping opacity-75"></div>
                 </div>
                 <div 
-                  className="absolute -bottom-6 -left-6 w-8 h-8 bg-secondary rounded-full flex items-center justify-center shadow-lg shadow-secondary/50 group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300 animate-float"
+                  className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-6 h-6 sm:w-8 sm:h-8 bg-secondary rounded-full flex items-center justify-center shadow-lg shadow-secondary/50 group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300 animate-float"
                   style={{ 
                     animationDelay: '0.5s',
-                    transform: `translateY(${scrollY * 0.2}px) rotate(${scrollY * -0.1}deg)`,
-                    transition: 'transform 0.1s ease-out',
                   }}
                 >
-                  <Zap className="w-4 h-4 text-secondary-foreground group-hover:scale-110 transition-transform" />
+                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-secondary-foreground group-hover:scale-110 transition-transform" />
                   <div className="absolute inset-0 bg-secondary rounded-full animate-ping opacity-75" style={{ animationDelay: '0.5s' }}></div>
                 </div>
                 
-                {/* Animated network connection lines with scroll parallax */}
+                {/* Animated network connection lines */}
                 <div 
                   className="absolute top-0 left-1/2 w-0.5 h-8 bg-gradient-to-b from-primary to-transparent group-hover:h-12 transition-all duration-300"
-                  style={{
-                    transform: `translateY(${scrollY * -0.2}px)`,
-                    transition: 'transform 0.1s ease-out, height 0.3s ease',
-                  }}
                 >
                   <div className="absolute top-0 left-0 w-full h-full bg-primary animate-pulse"></div>
                 </div>
                 <div 
                   className="absolute bottom-0 right-1/2 w-0.5 h-8 bg-gradient-to-t from-accent to-transparent group-hover:h-12 transition-all duration-300"
-                  style={{
-                    transform: `translateY(${scrollY * 0.15}px)`,
-                    transition: 'transform 0.1s ease-out, height 0.3s ease',
-                  }}
                 >
                   <div className="absolute bottom-0 left-0 w-full h-full bg-accent animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                 </div>
                 
-                {/* Rotating ring effect with scroll */}
+                {/* Rotating ring effect */}
                 <div 
                   className="absolute inset-0 rounded-lg border-2 border-primary/20 group-hover:border-primary/40 transition-all duration-500 animate-spin-slow"
                   style={{ 
                     animationDuration: '20s',
-                    transform: `rotate(${scrollY * 0.05}deg)`,
-                    transition: 'transform 0.1s ease-out, border-color 0.5s ease',
                   }}
                 ></div>
               </div>
@@ -480,7 +496,7 @@ export default function Portfolio() {
       <section 
         id="about" 
         ref={aboutRef}
-        className={`py-20 px-4 bg-muted/30 relative overflow-hidden transition-all duration-1000 ${
+        className={`py-12 sm:py-16 lg:py-20 px-4 bg-muted/30 relative overflow-hidden transition-all duration-1000 ${
           aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
         }`}
         style={{
@@ -488,24 +504,24 @@ export default function Portfolio() {
         }}
       >
         {/* Animated background elements */}
-        <div className="absolute top-10 right-10 w-6 h-6 bg-primary rounded-full animate-network-pulse shadow-lg shadow-primary/50">
+        <div className="absolute top-10 right-4 sm:right-10 w-4 h-4 sm:w-6 sm:h-6 bg-primary rounded-full animate-network-pulse shadow-lg shadow-primary/50">
           <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75"></div>
         </div>
-        <div className="absolute bottom-20 left-20 w-4 h-4 bg-accent rounded-full animate-network-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-secondary rounded-full animate-network-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-10 sm:bottom-20 left-4 sm:left-20 w-3 h-3 sm:w-4 sm:h-4 bg-accent rounded-full animate-network-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 right-1/4 w-2 h-2 sm:w-3 sm:h-3 bg-secondary rounded-full animate-network-pulse" style={{ animationDelay: '2s' }}></div>
         
         <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
+            <div className="space-y-6 sm:space-y-8">
               <div className="relative">
-                <h2 className="text-4xl font-black mb-2 flex items-center gap-4">
-                  <div className="w-8 h-8 bg-accent"></div>
+                <h2 className="text-3xl sm:text-4xl font-black mb-2 flex items-center gap-2 sm:gap-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-accent"></div>
                   SOBRE MÍ
                 </h2>
-                <div className="w-24 h-1 bg-primary"></div>
+                <div className="w-16 sm:w-24 h-1 bg-primary"></div>
               </div>
 
-              <div className="space-y-6 text-lg">
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg">
                 <p className="text-muted-foreground leading-relaxed">
                   ¡Hola, soy Gustavo! Especialista en <span className="text-primary font-semibold">automatización e inteligencia artificial</span>.
                 </p>
@@ -517,10 +533,10 @@ export default function Portfolio() {
                 </p>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <Button
                   variant="outline"
-                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold bg-transparent"
+                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold bg-transparent text-sm sm:text-base"
                   onClick={() => window.open("https://www.linkedin.com/in/gustavo-sandoval/", "_blank")}
                 >
                   LINKEDIN
@@ -589,7 +605,7 @@ export default function Portfolio() {
       <section 
         id="skills" 
         ref={skillsRef}
-        className={`py-20 px-4 relative overflow-hidden transition-all duration-1000 ${
+        className={`py-12 sm:py-16 lg:py-20 px-4 relative overflow-hidden transition-all duration-1000 ${
           skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
         }`}
         style={{
@@ -597,28 +613,28 @@ export default function Portfolio() {
         }}
       >
         {/* Animated background elements */}
-        <div className="absolute bottom-10 left-10 w-4 h-4 bg-secondary rounded-full animate-network-pulse shadow-lg shadow-secondary/50">
+        <div className="absolute bottom-10 left-4 sm:left-10 w-3 h-3 sm:w-4 sm:h-4 bg-secondary rounded-full animate-network-pulse shadow-lg shadow-secondary/50">
           <div className="absolute inset-0 bg-secondary rounded-full animate-ping opacity-75"></div>
         </div>
-        <div className="absolute top-20 right-1/4 w-3 h-3 bg-primary rounded-full animate-network-pulse" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute top-1/3 left-1/3 w-2 h-2 bg-accent rounded-full animate-network-pulse" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-20 right-1/4 w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full animate-network-pulse" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-1/3 left-1/3 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent rounded-full animate-network-pulse" style={{ animationDelay: '1.5s' }}></div>
         
         <div className="container mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Cpu className="w-8 h-8 text-primary animate-pulse drop-shadow-lg" />
-              <h2 className="text-4xl font-black bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">
+          <div className="text-center mb-10 sm:mb-16">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <Cpu className="w-6 h-6 sm:w-8 sm:h-8 text-primary animate-pulse drop-shadow-lg" />
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">
                 HABILIDADES TÉCNICAS
               </h2>
-              <CircuitBoard className="w-8 h-8 text-accent animate-pulse drop-shadow-lg" />
+              <CircuitBoard className="w-6 h-6 sm:w-8 sm:h-8 text-accent animate-pulse drop-shadow-lg" />
             </div>
-            <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto animate-pulse"></div>
-            <p className="text-muted-foreground mt-4 text-lg hover:text-primary transition-colors cursor-default">
+            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto animate-pulse"></div>
+            <p className="text-muted-foreground mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg hover:text-primary transition-colors cursor-default px-4">
               Especializado en <span className="text-primary font-semibold">automatización</span> e <span className="text-accent font-semibold">inteligencia artificial</span>
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {skills.map((skill, index) => {
               const IconComponent = skill.icon
               const colorClass =
@@ -653,10 +669,10 @@ export default function Portfolio() {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                   </div>
                   
-                  <CardContent className="p-6 text-center relative z-10">
+                  <CardContent className="p-3 sm:p-4 lg:p-6 text-center relative z-10">
                     <div className="relative inline-block">
                       <IconComponent
-                        className={`w-12 h-12 mx-auto mb-4 ${
+                        className={`w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto mb-2 sm:mb-3 lg:mb-4 ${
                           skill.color === "primary"
                             ? "text-primary"
                             : skill.color === "accent"
@@ -673,7 +689,7 @@ export default function Portfolio() {
                             : "border-secondary"
                       } animate-ping`} style={{ animationDuration: '2s' }}></div>
                     </div>
-                    <p className="font-bold text-sm uppercase tracking-wide group-hover:text-primary transition-colors duration-300">{skill.name}</p>
+                    <p className="font-bold text-xs sm:text-sm uppercase tracking-wide group-hover:text-primary transition-colors duration-300 break-words">{skill.name}</p>
                   </CardContent>
                 </Card>
               )
@@ -686,27 +702,27 @@ export default function Portfolio() {
       <section 
         id="projects" 
         ref={projectsRef}
-        className={`py-20 px-4 pb-32 md:pb-24 bg-muted/30 relative transition-all duration-1000 ${
+        className={`py-12 sm:py-16 lg:py-20 px-4 pb-24 sm:pb-32 md:pb-24 bg-muted/30 relative transition-all duration-1000 ${
           projectsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
         }`}
       >
         {/* <div className="absolute top-20 left-20 w-6 h-6 bg-accent rotate-45"></div> */}
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Layers className="w-8 h-8 text-primary animate-pulse drop-shadow-lg" />
-              <h2 className="text-4xl font-black bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">
+          <div className="text-center mb-10 sm:mb-16">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <Layers className="w-6 h-6 sm:w-8 sm:h-8 text-primary animate-pulse drop-shadow-lg" />
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">
                 PROYECTOS DESTACADOS
               </h2>
-              <Sparkles className="w-8 h-8 text-accent animate-pulse drop-shadow-lg" />
+              <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-accent animate-pulse drop-shadow-lg" />
             </div>
-            <div className="w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto animate-pulse"></div>
-            <p className="text-muted-foreground mt-4 text-lg hover:text-primary transition-colors cursor-default">
+            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto animate-pulse"></div>
+            <p className="text-muted-foreground mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg hover:text-primary transition-colors cursor-default px-4">
               Soluciones con <span className="text-primary font-semibold">IA</span> y <span className="text-accent font-semibold">automatización</span>
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             {projects.map((project, index) => {
               const accentColor =
                 project.accent === "primary"
@@ -770,32 +786,34 @@ export default function Portfolio() {
                   </div>
 
                   <CardHeader>
-                    <CardTitle className="flex items-center justify-between font-black text-xl">
-                      {project.title}
+                    <CardTitle className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 font-black text-lg sm:text-xl">
+                      <span className="flex-1">{project.title}</span>
                       <div className="flex gap-2">
                         <Button
                           variant="ghost"
                           size="icon"
                           asChild
-                          className="hover:bg-primary hover:text-primary-foreground"
+                          className="hover:bg-primary hover:text-primary-foreground h-8 w-8 sm:h-10 sm:w-10"
                         >
                           <Link href={project.github}>
-                            <Github className="w-5 h-5" />
+                            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                           </Link>
                         </Button>
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          asChild
-                          className="hover:bg-accent hover:text-accent-foreground"
-                        >
-                          <Link href={project.demo}>
-                            <ExternalLink className="w-5 h-5" />
-                          </Link>
-                        </Button>
+                        {project.demo && (
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            asChild
+                            className="hover:bg-accent hover:text-accent-foreground h-8 w-8 sm:h-10 sm:w-10"
+                          >
+                            <Link href={project.demo}>
+                              <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                            </Link>
+                          </Button>
+                        )}
                       </div>
                     </CardTitle>
-                    <CardDescription className="text-base">{project.description}</CardDescription>
+                    <CardDescription className="text-sm sm:text-base">{project.description}</CardDescription>
                   </CardHeader>
 
                   <CardContent>
