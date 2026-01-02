@@ -35,7 +35,8 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import ChatWidget from "@/components/chatWidget"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet" 
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import ThreeBackground from "@/components/three-background" 
 
 export default function Portfolio() {
   const [scrollY, setScrollY] = useState(0)
@@ -157,24 +158,27 @@ export default function Portfolio() {
     <div className="min-h-screen bg-background relative overflow-x-hidden">
        <ChatWidget />
       
+      {/* Three.js Background */}
+      <ThreeBackground />
+      
       {/* AI & Automation themed background elements with parallax */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden opacity-60">
         {/* Animated gradient orbs with parallax scroll */}
         <div 
-          className="absolute top-20 right-4 sm:right-20 w-48 h-48 sm:w-96 sm:h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow animate-float"
+          className="absolute top-20 right-4 sm:right-20 w-48 h-48 sm:w-96 sm:h-96 bg-primary/15 rounded-full blur-3xl animate-pulse-glow animate-float"
           style={{
             transform: `translateY(${scrollY * 0.3}px)`,
           }}
         ></div>
         <div 
-          className="absolute bottom-40 left-4 sm:left-10 w-40 h-40 sm:w-80 sm:h-80 bg-accent/20 rounded-full blur-3xl animate-pulse-glow animate-float" 
+          className="absolute bottom-40 left-4 sm:left-10 w-40 h-40 sm:w-80 sm:h-80 bg-accent/15 rounded-full blur-3xl animate-pulse-glow animate-float" 
           style={{ 
             animationDelay: '1s',
             transform: `translateY(${scrollY * -0.2}px)`,
           }}
         ></div>
         <div 
-          className="absolute top-1/2 left-1/4 w-36 h-36 sm:w-72 sm:h-72 bg-secondary/15 rounded-full blur-3xl animate-pulse-glow animate-float" 
+          className="absolute top-1/2 left-1/4 w-36 h-36 sm:w-72 sm:h-72 bg-secondary/10 rounded-full blur-3xl animate-pulse-glow animate-float" 
           style={{ 
             animationDelay: '2s',
             transform: `translateY(${scrollY * 0.4}px)`,
@@ -182,7 +186,7 @@ export default function Portfolio() {
         ></div>
         
         {/* Animated circuit lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.03] dark:opacity-[0.05]" style={{ animation: 'circuit-flow 20s linear infinite' }}>
+        <svg className="absolute inset-0 w-full h-full opacity-[0.02] dark:opacity-[0.03]" style={{ animation: 'circuit-flow 20s linear infinite' }}>
           <defs>
             <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.5">
@@ -199,7 +203,7 @@ export default function Portfolio() {
         </svg>
         
         {/* Circuit board pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
+        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}></div>
         
@@ -216,11 +220,11 @@ export default function Portfolio() {
         <div className="absolute top-1/4 right-1/4 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-network-pulse"></div>
         <div className="absolute bottom-1/3 right-1/3 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent rounded-full animate-network-pulse" style={{ animationDelay: '1.5s' }}></div>
 
-        {/* Floating particles */}
-        {[...Array(15)].map((_, i) => (
+        {/* Floating particles - reducido para no competir con Three.js */}
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full opacity-40"
+            className="absolute w-1 h-1 bg-primary rounded-full opacity-30"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
