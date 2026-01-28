@@ -921,7 +921,7 @@ export default function Portfolio() {
             <p className="text-muted-foreground font-medium flex flex-col sm:flex-row items-center justify-center gap-2">
               <span className="flex items-center gap-2">
                 <Brain className="w-4 h-4 text-primary" />
-                Gustavo Sandoval © 2025
+                Gustavo Sandoval © 2026
               </span>
               <span className="hidden sm:inline text-primary">•</span>
               <span>Automatización & IA</span>
